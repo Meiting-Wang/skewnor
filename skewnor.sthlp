@@ -2,7 +2,7 @@
 {right:Created time: Sep 26, 2021}
 {* -----------------------------title------------------------------------ *}{...}
 {p 0 18 2}
-{bf:[W-17] skewnor} {hline 2} To generate skew-normal(SN) random numbers. You can view the source code in {browse "https://github.com/Meiting-Wang/skewnor":github}.
+{bf:[W-18] skewnor} {hline 2} To generate skew-normal(SN) random numbers. You can view the source code in {browse "https://github.com/Meiting-Wang/skewnor":github}.
 
 
 {* -----------------------------Syntax------------------------------------ *}{...}
