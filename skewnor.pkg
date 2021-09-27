@@ -1,0 +1,9 @@
+v 1.0.0
+d skewnor. To generate skew-normal(SN) random numbers
+d Meiting Wang
+d Institute for Economic and Social Research, Jinan University
+d Guangzhou, China
+d wangmeiting92@gmail.com
+
+f skewnor.ado
+f skewnor.sthlp
