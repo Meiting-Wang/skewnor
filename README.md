@@ -6,9 +6,11 @@
 ## 一、引言
 
 如果 $X \sim \mathcal{SN}(\xi,\omega,\alpha)$，我们就说 $X$ 服从 location $\xi$、scale $\omega$ 和 shape $\alpha$ 的 skew-normal 分布，此时随机变量 $X$ 的概率密度为
+
 $$
 f_{X}(x)=\frac{2}{\omega} \phi\left(\frac{x-\xi}{\omega}\right) \Phi\left[\alpha \cdot \left(\frac{x-\xi}{\omega}\right)\right],\quad x\in (-\infty,+\infty)
 $$
+
 其中 $\phi(\cdot)$ 和 $\Phi(\cdot)$ 分别为标准正态分布的概率密度与分布函数。虽然 Stata 中随机数生成函数已经很多，但仍然没有找到 skew-normal 分布的随机数生成函数，于是便诞生了这个命令。该命令具有以下特点：
 
 - 可以依据用户设定的 location $\xi$、scale $\omega$ 和 shape $\alpha$ 参数生成对应的该分布的随机数（随机数生成过程参照 da Silva Ferreira et al. (2011)）；
