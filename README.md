@@ -116,7 +116,7 @@ Characteristics:
 
 ![](https://cdn.jsdelivr.net/gh/Meiting-Wang/pictures/picgo/picgo-20210927145703.png)
 
-## 参考资料
+## 参考文献
 - Da Silva Ferreira, Clécio, Heleno Bolfarine, and Víctor H. Lachos. 2011. "Skew scale mixtures of normal distributions: Properties and estimation." *Statistical Methodology* 8(2): 154-171.
 
 > 点击【阅读原文】可进入该命令的 github 项目。
