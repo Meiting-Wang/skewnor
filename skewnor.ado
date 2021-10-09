@@ -2,13 +2,17 @@
 * Author: Meiting Wang, Ph.D. Candidate, Institute for Economic and Social Research, Jinan University
 * Email: wangmeiting92@gmail.com
 * Created on Sep 26, 2021
+* Update on Oct 9, 2021
 
 
 
-program define skewnor, rclass
+program define skewnor, rclass by(onecall)
 version 16.0
 
-syntax newvarname [, Location(real 0) SCale(numlist min=1 max=1 >0) SHape(real 0) seed(numlist min=1 max=1 integer) CHaracteristics graph]
+syntax newvarname [if] [in] [, Location(real 0) SCale(numlist max=1 >0) SHape(real 0) seed(numlist max=1 integer) CHaracteristics graph]
+/****编程注意事项：
+-如果使用了 by 选项，则进入这里之前数据一定已经处于 sort byvars 的状态，于是我们在后面的编程中可以使用这一结果。
+****/
 
 *----------------------- 前期处理 -----------------------------
 *- 默认值设置
@@ -32,11 +36,18 @@ tempvar T0 T1
 if "`seed'" != "" {
 	set seed `seed'
 }
-gen `T0' = rnormal()
-gen `T1' = rnormal()
 local delta = `shape' / sqrt(1+`shape'^2)
-gen `varlist' = `location' + `scale'*(`delta'*abs(`T0') + sqrt(1-`delta'^2)*`T1')
-drop `T0' `T1' 
+if _by() { //有 by 或 bysort 前缀的情况
+	qui by `_byvars': gen `T0' = rnormal() `if' `in'
+	qui by `_byvars': gen `T1' = rnormal() `if' `in'
+	qui by `_byvars': gen `varlist' = `location' + `scale'*(`delta'*abs(`T0') + sqrt(1-`delta'^2)*`T1') `if' `in'
+}
+else { //无 by 或 bysort 前缀的情况
+	qui gen `T0' = rnormal() `if' `in'
+	qui gen `T1' = rnormal() `if' `in'
+	qui gen `varlist' = `location' + `scale'*(`delta'*abs(`T0') + sqrt(1-`delta'^2)*`T1') `if' `in'
+}
+drop `T0' `T1'
 
 
 *--------------------------- 附加选项 ----------------------------

@@ -1,5 +1,6 @@
 {smcl}
 {right:Created time: Sep 26, 2021}
+{right:Updated time: Oct  9, 2021}
 {* -----------------------------title------------------------------------ *}{...}
 {p 0 18 2}
 {bf:[W-18] skewnor} {hline 2} To generate skew-normal(SN) random numbers. You can view the source code in {browse "https://github.com/Meiting-Wang/skewnor":github}.
@@ -9,7 +10,7 @@
 {title:Syntax}
 
 {p 8 8 2}
-{cmd:skewnor} {newvar} [, {it:{help skewnor##Options:options}}]
+{cmd:skewnor} {newvar} {ifin} [, {it:{help skewnor##Options:options}}]
 
 
 {* -----------------------------Contents------------------------------------ *}{...}
@@ -55,6 +56,7 @@ It is worth noting that this command can only be used in version 16.0 or later.
 {synopt :{opt ch:aracteristics}}Calculate simulated and true characteristics for the random variable, which include mean, standard deviation, skewness, and kurtosis. The values above will also be stored in {bf:r()}.{p_end}
 {synopt :{opt graph}}Generate a graph with histogram and simulated and true probability densities for the random variable.{p_end}
 {synoptline}
+{p 4 4 2}{it:Notes}: {help by:{bf:[D] by}} prefix is allowed in this command.{p_end}
 
 
 {* -----------------------------Examples------------------------------------ *}{...}
