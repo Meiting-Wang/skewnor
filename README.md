@@ -1,4 +1,4 @@
-# Stata 命令 skewnor 的更新
+# Stata 命令 skewnor 的更新——生成 skew-normal 随机数
 
 > 作者：王美庭  
 > Email: wangmeiting92@gmail.com
